@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation de Camion</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=VOTRE_CLE_API&libraries=places"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Plateforme de Transport</h1>
+        <button id="loginBtn">Se Connecter</button>
+    </header>
+
+    <section class="search">
+        <h2>Trouver un Camion</h2>
+        <label>Lieu de départ:</label>
+        <input type="text" id="depart" placeholder="Ex: Douala">
+        
+        <label>Destination:</label>
+        <input type="text" id="destination" placeholder="Ex: Yaoundé">
+        
+        <label>Type de camion:</label>
+        <select id="typeCamion">
+            <option>Fourgon</option>
+            <option>Camion plateau</option>
+            <option>Camion frigorifique</option>
+        </select>
+        
+        <button onclick="rechercherCamion()">Rechercher</button>
+    </section>
+
+    <section id="result" class="hidden">
+        <h3>Camion disponible :</h3>
+        <p id="truckInfo"></p>
+        <button onclick="reserverCamion()">Réserver</button>
+    </section>
+
+    <section id="tracking" class="hidden">
+        <h3>Suivi du Camion</h3>
+        <p>Camion en route...</p>
+        <div id="map"></div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
